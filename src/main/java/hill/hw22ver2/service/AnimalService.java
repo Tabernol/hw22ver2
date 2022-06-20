@@ -4,23 +4,20 @@ import hill.hw22ver2.model.Animal;
 import hill.hw22ver2.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AnimalService {
 
-    @Autowired
     private final AnimalRepository animalRepository;
 
+    @Autowired
     public AnimalService(AnimalRepository animalRepository) {
         this.animalRepository = animalRepository;
     }
 
     public Animal findById(Long id) {
-        return animalRepository.getOne(id);
-
+        return animalRepository.findById(id).orElse(null);
     }
 
     public List<Animal> findAll() {
@@ -34,6 +31,4 @@ public class AnimalService {
     public void deleteById(Long id) {
         animalRepository.deleteById(id);
     }
-
-
 }

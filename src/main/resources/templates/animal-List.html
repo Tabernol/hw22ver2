@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http //www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Animals</title>
@@ -22,8 +22,8 @@
                 <td th:text="${animal.id}"></td>
                 <td th:text="${animal.name}"></td>
                 <td th:text="${animal.age}"></td>
-                <td><a th:href="@{animal-update/{id} (id-${user.id})}"> Edit</a></td>
-                <td><a th:href="@{animal-delete/{id} (id-${user.id})}"> Delete</a></td>
+                <td><a th:href="@{animal-update/{id} (id=${user.id})}"> Edit</a></td>
+                <td><a th:href="@{animal-delete/{id} (id=${user.id})}"> Delete</a></td>
             </tr>
             </tbody>
         </table>
